@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP API Project with Vue.js</title>
+    <title>Blog Posts App</title>
 </head>
 <body>
     <div id="app">
         <h1>Blog Posts</h1>
 
         <div v-if="posts.length">
-            <div v-for="post in posts" :key="post.id">
+            <div v-for="post in posts" :key="post.id" class="post">
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content }}</p>
                 <hr>
