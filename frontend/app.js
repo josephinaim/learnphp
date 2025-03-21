@@ -1,4 +1,5 @@
-import "./style.scss"; 
+require("./style.scss");
+
 
 new Vue({
     el: '#app',
