@@ -22,5 +22,10 @@ class PostController {
         $stmt = $this->pdo->prepare("DELETE FROM posts WHERE id = ?");
         return $stmt->execute([$id]);
     }
+
+    public function updatePost($id, $title, $content) {
+        $stmt = $this->pdo->prepare("UPDATE posts SET title = ?, content = ? WHERE id = ?");
+        return $stmt->execute([$title, $content, $id]);
+    }
 }
 ?>
