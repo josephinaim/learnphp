@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP API Project with Vue.js</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <h1>Blog Posts</h1>
 
-        <!-- Post List -->
         <div v-if="posts.length">
             <div v-for="post in posts" :key="post.id">
                 <h2>{{ post.title }}</h2>
@@ -22,7 +20,6 @@
             <p>No posts available.</p>
         </div>
 
-        <!-- Form to Add Post -->
         <div>
             <h3>Create New Post</h3>
             <form @submit.prevent="createPost">
@@ -38,7 +35,5 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
-    <script src="vue.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>

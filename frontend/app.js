@@ -1,8 +1,10 @@
+import "./style.scss"; 
+
 new Vue({
     el: '#app',
     data: {
-        posts: [], // Array to hold posts
-        newPost: { // Data for new post
+        posts: [],
+        newPost: { 
             title: '',
             content: ''
         }
@@ -11,7 +13,6 @@ new Vue({
         this.fetchPosts();
     },
     methods: {
-        // Fetch posts from the PHP API
         fetchPosts() {
             fetch("http://localhost:8000/api.php")
                 .then(response => response.json())
@@ -21,7 +22,6 @@ new Vue({
                 .catch(error => console.error("Error fetching posts:", error));
         },
 
-        // Create a new post
         createPost() {
             const data = {
                 title: this.newPost.title,
@@ -38,7 +38,6 @@ new Vue({
                 .then(response => response.json())
                 .then(result => {
                     if (result.message) {
-                        // On success, reset form and fetch updated posts
                         alert(result.message);
                         this.newPost.title = '';
                         this.newPost.content = '';
