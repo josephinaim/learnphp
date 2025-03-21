@@ -17,5 +17,10 @@ class PostController {
         $stmt = $this->pdo->prepare("INSERT INTO posts (title, content) VALUES (?, ?)");
         return $stmt->execute([$title, $content]);
     }
+
+    public function deletePost($id) {
+        $stmt = $this->pdo->prepare("DELETE FROM posts WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
 }
 ?>
